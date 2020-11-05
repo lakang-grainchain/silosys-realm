@@ -1,0 +1,152 @@
+{
+    "collection": "receiving",
+    "database": "silosys",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_partition": {
+                "bsonType": "string"
+            },
+            "characteristics": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        },
+                        "value": {
+                            "bsonType": "double"
+                        }
+                    },
+                    "title": "Characteristic"
+                }
+            },
+            "commodity": {
+                "bsonType": "object",
+                "properties": {
+                    "category": {
+                        "bsonType": "string"
+                    },
+                    "id": {
+                        "bsonType": "string"
+                    },
+                    "name": {
+                        "bsonType": "string"
+                    },
+                    "sub_category": {
+                        "bsonType": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "category",
+                    "sub_category",
+                    "name"
+                ],
+                "title": "CommodityRT"
+            },
+            "created": {
+                "bsonType": "date"
+            },
+            "dry_net_weight": {
+                "bsonType": "double"
+            },
+            "location": {
+                "bsonType": "string"
+            },
+            "net_weight": {
+                "bsonType": "double"
+            },
+            "seller": {
+                "bsonType": "object",
+                "properties": {
+                    "farm": {
+                        "bsonType": "object",
+                        "properties": {
+                            "block": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "extension": {
+                                        "bsonType": "double"
+                                    },
+                                    "id": {
+                                        "bsonType": "string"
+                                    },
+                                    "name": {
+                                        "bsonType": "string"
+                                    },
+                                    "units": {
+                                        "bsonType": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "name",
+                                    "extension",
+                                    "units"
+                                ],
+                                "title": "BlockRT"
+                            },
+                            "id": {
+                                "bsonType": "string"
+                            },
+                            "latitude": {
+                                "bsonType": "string"
+                            },
+                            "longitude": {
+                                "bsonType": "string"
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "latitude",
+                            "longitude"
+                        ],
+                        "title": "FarmRT"
+                    },
+                    "first_name": {
+                        "bsonType": "string"
+                    },
+                    "id": {
+                        "bsonType": "string"
+                    },
+                    "last_name": {
+                        "bsonType": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "first_name",
+                    "last_name"
+                ],
+                "title": "SellerRT"
+            }
+        },
+        "required": [
+            "_id",
+            "net_weight",
+            "dry_net_weight",
+            "location",
+            "created"
+        ],
+        "title": "Receiving"
+    }
+}

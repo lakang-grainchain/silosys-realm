@@ -1,0 +1,59 @@
+{
+    "collection": "farm",
+    "database": "silosys",
+    "relationships": {
+        "blocks": {
+            "ref": "#/relationship/mongodb-atlas/silosys/block",
+            "source_key": "blocks",
+            "foreign_key": "_id",
+            "is_list": true
+        }
+    },
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_partition": {
+                "bsonType": "string"
+            },
+            "blocks": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                }
+            },
+            "created": {
+                "bsonType": "date"
+            },
+            "latitude": {
+                "bsonType": "string"
+            },
+            "longitude": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            }
+        },
+        "required": [
+            "_id",
+            "name",
+            "latitude",
+            "longitude",
+            "created"
+        ],
+        "title": "Farm"
+    }
+}

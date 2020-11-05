@@ -1,0 +1,55 @@
+{
+    "collection": "instance",
+    "database": "silosys",
+    "relationships": {
+        "locations": {
+            "ref": "#/relationship/mongodb-atlas/silosys/location",
+            "source_key": "locations",
+            "foreign_key": "_id",
+            "is_list": true
+        }
+    },
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_partition": {
+                "bsonType": "string"
+            },
+            "created": {
+                "bsonType": "date"
+            },
+            "locations": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "objectId"
+                }
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "slug": {
+                "bsonType": "string"
+            }
+        },
+        "required": [
+            "_id",
+            "name",
+            "created",
+            "slug"
+        ],
+        "title": "Instance"
+    }
+}

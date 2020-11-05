@@ -1,0 +1,41 @@
+{
+    "collection": "location",
+    "database": "silosys",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "_partition": {
+                "bsonType": "string"
+            },
+            "created": {
+                "bsonType": "date"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "slug": {
+                "bsonType": "string"
+            }
+        },
+        "required": [
+            "_id",
+            "name",
+            "created",
+            "slug"
+        ],
+        "title": "Location"
+    }
+}
